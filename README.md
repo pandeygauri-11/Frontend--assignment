@@ -8,14 +8,14 @@
 
 1. **Gauri Pandey** – 2102508035 – 2BE03
 2. **G. Divyateja** – 2122508022 – 2BE03
-3. **Gopalam Akshita Devi** – 2112508011– 2BE03
+3. **Gopalam Akshitha Devi** – 2112508011– 2BE03
 
 ### Team Leader
 Gauri Pandey
 ---
 
 ## Project Title
-To be decided
+Online Restaurant Management Website
 ---
 
 ## 📖 Project Description
@@ -27,6 +27,7 @@ To be decided
 The website will contain the following pages:
 
 **Home**
+**Gallery**
 **About**
 **contact**
 
