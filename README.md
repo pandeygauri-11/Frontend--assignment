@@ -2,7 +2,8 @@
 
 ## 👥 Team Information
 
-**Team Name:** Tech Explorers
+**Team Name:** 
+**Tech Explorers**
 
 ### Members
 
