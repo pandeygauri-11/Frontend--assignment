@@ -7,11 +7,11 @@
 ### Members
 
 1. **Gauri Pandey** – 2102508035 – 2BE03
-2. **G. Divyateja** – USN – 2BE03
-3. **Gopalam Akshita Devi** – USN – 2BE03
+2. **G. Divyateja** – 2122508022 – 2BE03
+3. **Gopalam Akshita Devi** – 2112508011– 2BE03
 
 ### Team Leader
-To be decided
+Gauri Pandey
 ---
 
 ## Project Title
