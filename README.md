@@ -27,6 +27,6 @@ Online Restaurant Management Website
 ##  Page Structure
 The website will contain the following pages:
 
-**Home**->**Menu**->**About**->**Contact**
+**Home**->**Menu**->**About Us**->**Contact**
 
 ---
