@@ -20,7 +20,7 @@ To be decided
 
 ## 📖 Project Description
 
-This project is a frontend web development assignment where we will design and build a responsive website using modern web technologies. The website will include multiple pages and user-friendly navigation.
+**This project is a frontend web development assignment where we will design and build a responsive website using modern web technologies. The website will include multiple pages and user-friendly navigation.**
 ---
 
 ##  Page Structure
