@@ -2,7 +2,7 @@
 
 ## 👥 Team Information
 
-**Team Name:** To be decided
+**Team Name:** Tech Explorers
 
 ### Members
 
