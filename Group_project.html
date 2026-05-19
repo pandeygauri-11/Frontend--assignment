@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Restaurant Management Website</title>
+
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* HEADER */
+h1 {
+    text-align: center;
+    background: #111111da;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* HOME CONTAINER */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* RESTAURANT CARDS */
+.card {
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+h2 {
+    color: #c0392b;
+}
+
+/* BUTTONS */
+.btn {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a93226;
+}
+
+/* PAGE STYLE */
+.page {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* MAIN IMAGE */
+.mainimg {
+    width: 80%;
+    height: 380px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+/* MENU PAGE BACKGROUNDS */
+
+#menu1{
+    background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#menu2{
+    background-image:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#menu3{
+    background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* TABLE STYLE */
+
+table{
+    width:90%;
+    margin:auto;
+    border-collapse:collapse;
+    background:transparent;
+}
+
+/* REMOVE TABLE LINES */
+
+th,
+td{
+    border:none;
+    padding:18px;
+    font-size:20px;
+    color:white;
+    background:rgba(0,0,0,0.45);
+}
+
+/* HEADER STYLE */
+
+th{
+    background:rgba(255,140,0,0.8);
+    color:white;
+    font-size:24px;
+}
+
+/* FOOD IMAGES */
+
+.foodimg{
+    width:90px;
+    height:70px;
+    border-radius:10px;
+    margin-left:15px;
+    vertical-align:middle;
+    object-fit:cover;
+}
+/* ================= ADDRESS PAGE BACKGROUNDS ================= */
+
+#address1{
+    background-image:url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#address2{
+    background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#address3{
+    background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+
+/* ================= CONTACT PAGE BACKGROUNDS ================= */
+
+#contact1{
+    background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#contact2{
+    background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#contact3{
+    background-image:url('https://images.unsplash.com/photo-1515169067868-5387ec356754');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+
+/* ================= ABOUT US PAGE BACKGROUNDS ================= */
+
+#about1{
+    background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#about2{
+    background-image:url('https://images.unsplash.com/photo-1497215842964-222b430dc094');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+#about3{
+    background-image:url('https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+
+/* ================= TEXT DESIGN ================= */
+
+#address1 p,
+#address2 p,
+#address3 p,
+#contact1 p,
+#contact2 p,
+#contact3 p,
+#about1 p,
+#about2 p,
+#about3 p{
+    background:rgba(0,0,0,0.55);
+    color:white;
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:10px;
+    margin:10px;
+    font-size:20px;
+}
+/* HOME PAGE */
+
+#home{
+    min-height:100vh;
+    background:linear-gradient(to right,#ffecd2,#fcb69f);
+    padding-bottom:40px;
+}
+/* ================= HOME PAGE ================= */
+
+#home{
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff5e6,#ffe0cc,#ffd6d6);
+    padding-bottom:40px;
+}
+
+/* ================= RESTAURANT 1 ================= */
+
+#restaurant1{
+    min-height:100vh;
+    background:linear-gradient(135deg,#ffe5b4,#ffd1a1,#ffc3a0);
+}
+
+/* ================= RESTAURANT 2 ================= */
+
+#restaurant2{
+    min-height:100vh;
+    background:linear-gradient(135deg,#d4fc79,#96e6a1,#84fab0);
+}
+
+/* ================= RESTAURANT 3 ================= */
+
+#restaurant3{
+    min-height:100vh;
+    background:linear-gradient(135deg,#fbc2eb,#a6c1ee,#d4fcff);
+}
+
+/* ADDRESS IMAGES */
+.addressimg {
+    width: 260px;
+    height: 180px;
+    border-radius: 8px;
+    margin: 10px;
+    object-fit: cover;
+}
+
+/* BACK BUTTON */
+.back {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back:hover {
+    background: black;
+}
+
+/* TEXT */
+p {
+    font-size: 18px;
+    color: #333;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- HOME PAGE -->
+
+    <div id="home">
+
+        <h1>ONLINE RESTAURANT MANAGEMENT WEBSITE</h1>
+
+        <div class="container">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+
+                <h2>Spicy Villa</h2>
+
+                <button class="btn"
+                    onclick="document.getElementById('home').style.display='none';
+                    document.getElementById('restaurant1').style.display='block';">
+                    View Details
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+
+                <h2>Food Paradise</h2>
+
+                <button class="btn"
+                    onclick="document.getElementById('home').style.display='none';
+                    document.getElementById('restaurant2').style.display='block';">
+                    View Details
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de">
+
+                <h2>Royal Dine</h2>
+
+                <button class="btn"
+                    onclick="document.getElementById('home').style.display='none';
+                    document.getElementById('restaurant3').style.display='block';">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RESTAURANT 1 DETAILS PAGE -->
+
+    <div class="page" id="restaurant1">
+
+        <h1>SPICY VILLA RESTAURANT</h1>
+
+        <img class="mainimg"
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+
+        <br><br>
+
+        <button class="btn"
+            onclick="document.getElementById('restaurant1').style.display='none';
+            document.getElementById('menu1').style.display='block';">
+            Menu
+        </button>
+
+        <button class="btn"
+            onclick="document.getElementById('restaurant1').style.display='none';
+            document.getElementById('address1').style.display='block';">
+            Address
+        </button>
+
+        <button class="btn"
+            onclick="document.getElementById('restaurant1').style.display='none';
+            document.getElementById('contact1').style.display='block';">
+            Contact
+        </button>
+
+        <button class="btn"
+            onclick="document.getElementById('restaurant1').style.display='none';
+            document.getElementById('about1').style.display='block';">
+            About Us
+        </button>
+
+        <br>
+
+        <button class="back"
+            onclick="document.getElementById('restaurant1').style.display='none';
+            document.getElementById('home').style.display='block';">
+            Back To Home
+        </button>
+
+    </div>
+
+
+
+    <!-- MENU PAGE -->
+
+    <div class="page" id="menu1">
+        <h1>SPICY VILLA MENU</h1>
+        <table>
+            <tr>
+                <th>Food Item</th>
+                <th>Price</th>
+            </tr>
+            <tr><td>Chicken Biryani</td><td>₹250</td></tr>
+            <tr><td>Mutton Biryani</td><td>₹320</td></tr>
+            <tr><td>Veg Biryani</td><td>₹180</td></tr>
+            <tr><td>Paneer Butter Masala</td><td>₹220</td></tr>
+            <tr><td>Butter Naan</td><td>₹40</td></tr>
+            <tr><td>Veg Fried Rice</td><td>₹170</td></tr>
+            <tr><td>Chicken Fried Rice</td><td>₹210</td></tr>
+            <tr><td>Noodles</td><td>₹160</td></tr>
+            <tr><td>Pizza</td><td>₹300</td></tr>
+            <tr><td>Burger</td><td>₹150</td></tr>
+            <tr><td>French Fries</td><td>₹120</td></tr>
+            <tr><td>Chicken Wings</td><td>₹260</td></tr>
+            <tr><td>Tandoori Chicken</td><td>₹350</td></tr>
+            <tr><td>Fish Fry</td><td>₹280</td></tr>
+            <tr><td>Masala Dosa</td><td>₹90</td></tr>
+            <tr><td>Idli Vada</td><td>₹70</td></tr>
+            <tr><td>Ice Cream</td><td>₹110</td></tr>
+            <tr><td>Chocolate Cake</td><td>₹140</td></tr>
+            <tr><td>Cold Coffee</td><td>₹130</td></tr>
+            <tr><td>Mango Juice</td><td>₹90</td></tr>
+            <tr><td>Soft Drinks</td><td>₹50</td></tr>
+            <tr><td>Chicken Shawarma</td><td>₹160</td></tr>
+            <tr><td>Pasta</td><td>₹220</td></tr>
+            <tr><td>Tomato Soup</td><td>₹100</td></tr>
+            <tr><td>Veg Salad</td><td>₹120</td></tr>
+            <tr><td>Grilled Chicken</td><td>₹340</td></tr>
+            <tr><td>Cheese Sandwich</td><td>₹130</td></tr>
+            <tr><td>Spring Roll</td><td>₹150</td></tr>
+            <tr><td>Gobi Manchurian</td><td>₹180</td></tr>
+            <tr><td>Pav Bhaji</td><td>₹140</td></tr>
+        </table>
+        <button class="back"
+            onclick="document.getElementById('menu1').style.display='none';
+            document.getElementById('restaurant1').style.display='block';">
+            Back
+        </button>
+
+    </div>
+
+
+
+    <!-- ADDRESS PAGE -->
+
+    <div class="page" id="address1">
+
+        <h1>SPICY VILLA ADDRESS</h1>
+
+        <p>Restaurant Name : Spicy Villa</p>
+
+        <p>Address : MG Road, Bengaluru, Karnataka - 560001</p>
+
+        <p>Landmark : Near Cubbon Park</p>
+
+        <p>Opening Time : 10:00 AM</p>
+
+        <p>Closing Time : 11:30 PM</p>
+
+        <p>Parking Facility Available</p>
+
+        <p>Free Home Delivery Available</p>
+
+        <button class="back"
+            onclick="document.getElementById('address1').style.display='none';
+            document.getElementById('restaurant1').style.display='block';">
+            Back
+        </button>
+
+    </div>
+
+
+
+    <!-- CONTACT PAGE -->
+
+    <div class="page" id="contact1">
+
+        <h1>SPICY VILLA CONTACT DETAILS</h1>
+
+        <p>Phone Number : 9876543210</p>
+
+        <p>Alternative Number : 9123456780</p>
+
+        <p>Email : spicyvilla@gmail.com</p>
+
+        <p>Instagram : @spicyvilla</p>
+
+        <p>Facebook : Spicy Villa Restaurant</p>
+
+        <p>Customer Care : 1800-456-789</p>
+
+        <p>WhatsApp Support : 9988776655</p>
+
+        <p>Online Food Delivery Available</p>
+
+        <button class="back"
+            onclick="document.getElementById('contact1').style.display='none';
+            document.getElementById('restaurant1').style.display='block';">
+            Back
+        </button>
+
+    </div>
+
+
+
+    <!-- ABOUT US PAGE -->
+
+    <div class="page" id="about1">
+
+        <h1>ABOUT US</h1>
+
+        <p>Name : GAURI PANDEY</p>
+
+        <p>Course : Engineering</p>
+
+        <p>Project Name : Online Restaurant Management Website</p>
+
+        <p>College : S-Vyasa Deemed To Be University</p>
+
+        <p>Location : Karnataka, India</p>
+
+        <p>This website is created for restaurant management.</p>
+
+        <p>Customers can view menu, contact details and address.</p>
+
+        <p>The website helps users to know food prices and restaurant information easily.</p>
+
+        <p>Technology Used : HTML and CSS</p>
+
+        <p>Project Type : Frontend Web Development</p>
+
+        <button class="back"
+            onclick="document.getElementById('about1').style.display='none';
+            document.getElementById('restaurant1').style.display='block';">
+            Back
+        </button>
+
+    </div>
+
+
+
+    <!-- RESTAURANT 2 -->
+
+    <div class="page" id="restaurant2">
+
+    <h1>FOOD PARADISE</h1>
+
+    <img class="mainimg"
+        src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+
+    <br><br>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant2').style.display='none';
+        document.getElementById('menu2').style.display='block';">
+        Menu
+    </button>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant2').style.display='none';
+        document.getElementById('address2').style.display='block';">
+        Address
+    </button>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant2').style.display='none';
+        document.getElementById('contact2').style.display='block';">
+        Contact
+    </button>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant2').style.display='none';
+        document.getElementById('about2').style.display='block';">
+        About Us
+    </button>
+
+    <br>
+
+    <button class="back"
+        onclick="document.getElementById('restaurant2').style.display='none';
+        document.getElementById('home').style.display='block';">
+        Back To Home
+    </button>
+
+</div>
+
+
+
+<!-- MENU PAGE -->
+
+<div class="page" id="menu2">
+
+    <h1>FOOD PARADISE MENU</h1>
+
+    <table>
+
+        <tr>
+            <th>Food Item</th>
+            <th>Price</th>
+        </tr>
+
+        <tr><td>Veg Fried Rice</td><td>₹180</td></tr>
+        <tr><td>Chicken Fried Rice</td><td>₹220</td></tr>
+        <tr><td>Paneer Noodles</td><td>₹190</td></tr>
+        <tr><td>Chicken Noodles</td><td>₹230</td></tr>
+        <tr><td>Spring Roll</td><td>₹150</td></tr>
+        <tr><td>Gobi Manchurian</td><td>₹170</td></tr>
+        <tr><td>Paneer Tikka</td><td>₹260</td></tr>
+        <tr><td>Cheese Pizza</td><td>₹320</td></tr>
+        <tr><td>Veg Burger</td><td>₹140</td></tr>
+        <tr><td>French Fries</td><td>₹120</td></tr>
+        <tr><td>Chicken Wings</td><td>₹270</td></tr>
+        <tr><td>Fish Curry</td><td>₹300</td></tr>
+        <tr><td>Masala Dosa</td><td>₹90</td></tr>
+        <tr><td>Idli Sambar</td><td>₹70</td></tr>
+        <tr><td>Chocolate Ice Cream</td><td>₹110</td></tr>
+        <tr><td>Vanilla Milkshake</td><td>₹130</td></tr>
+        <tr><td>Cold Coffee</td><td>₹120</td></tr>
+        <tr><td>Mango Juice</td><td>₹90</td></tr>
+        <tr><td>Soft Drinks</td><td>₹50</td></tr>
+        <tr><td>Pasta</td><td>₹210</td></tr>
+
+    </table>
+
+    <button class="back"
+        onclick="document.getElementById('menu2').style.display='none';
+        document.getElementById('restaurant2').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+
+
+<!-- ADDRESS PAGE -->
+
+<div class="page" id="address2">
+
+    <h1>FOOD PARADISE ADDRESS</h1>
+
+    <p>Restaurant Name : Food Paradise</p>
+
+    <p>Address : Indiranagar, Bengaluru, Karnataka - 560038</p>
+
+    <p>Landmark : Near Metro Station</p>
+
+    <p>Opening Time : 9:00 AM</p>
+
+    <p>Closing Time : 12:00 AM</p>
+
+    <p>Air Conditioned Dining Hall Available</p>
+
+    <p>Online Table Booking Available</p>
+
+    <button class="back"
+        onclick="document.getElementById('address2').style.display='none';
+        document.getElementById('restaurant2').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+
+
+<!-- CONTACT PAGE -->
+
+<div class="page" id="contact2">
+
+    <h1>FOOD PARADISE CONTACT DETAILS</h1>
+
+    <p>Phone Number : 9988776655</p>
+
+    <p>Alternative Number : 9876501234</p>
+
+    <p>Email : foodparadise@gmail.com</p>
+
+    <p>Instagram : @foodparadise</p>
+
+    <p>Facebook : Food Paradise Official</p>
+
+    <p>Customer Support : 1800-999-888</p>
+
+    <p>WhatsApp : 9012345678</p>
+
+    <p>Free Home Delivery Available</p>
+
+    <button class="back"
+        onclick="document.getElementById('contact2').style.display='none';
+        document.getElementById('restaurant2').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+
+
+<!-- ABOUT US PAGE -->
+
+<div class="page" id="about2">
+
+    <h1>ABOUT FOOD PARADISE</h1>
+
+    <p>Owner Name : AKSHITHA</p>
+
+    <p>Project Name : Online Restaurant Management Website</p>
+
+    <p>Restaurant Type : Multi Cuisine Restaurant</p>
+
+    <p>Location : Bengaluru, Karnataka</p>
+
+    <p>Food Paradise is famous for Chinese and Italian foods.</p>
+
+    <p>The restaurant provides quality food with hygienic preparation.</p>
+
+    <p>Online food delivery and online payment facilities are available.</p>
+
+    <p>Technology Used : HTML and CSS</p>
+
+    <p>Project Category : Frontend Web Design</p>
+
+    <button class="back"
+        onclick="document.getElementById('about2').style.display='none';
+        document.getElementById('restaurant2').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+
+
+
+    <!-- RESTAURANT 3 -->
+
+    <div class="page" id="restaurant3">
+
+    <h1>ROYAL DINE</h1>
+
+    <img class="mainimg"
+        src="https://images.unsplash.com/photo-1559339352-11d035aa65de">
+
+    <br><br>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant3').style.display='none';
+        document.getElementById('menu3').style.display='block';">
+        Menu
+    </button>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant3').style.display='none';
+        document.getElementById('address3').style.display='block';">
+        Address
+    </button>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant3').style.display='none';
+        document.getElementById('contact3').style.display='block';">
+        Contact
+    </button>
+
+    <button class="btn"
+        onclick="document.getElementById('restaurant3').style.display='none';
+        document.getElementById('about3').style.display='block';">
+        About Us
+    </button>
+
+    <br>
+
+    <button class="back"
+        onclick="document.getElementById('restaurant3').style.display='none';
+        document.getElementById('home').style.display='block';">
+        Back To Home
+    </button>
+
+</div>
+
+
+
+<!-- MENU PAGE -->
+
+<div class="page" id="menu3">
+
+    <h1>ROYAL DINE MENU</h1>
+
+    <table>
+
+        <tr>
+            <th>Food Item</th>
+            <th>Price</th>
+        </tr>
+
+        <tr><td>Chicken Biryani</td><td>₹260</td></tr>
+        <tr><td>Mutton Curry</td><td>₹340</td></tr>
+        <tr><td>Veg Meals</td><td>₹180</td></tr>
+        <tr><td>Butter Chicken</td><td>₹320</td></tr>
+        <tr><td>Butter Naan</td><td>₹40</td></tr>
+        <tr><td>Paneer Fried Rice</td><td>₹190</td></tr>
+        <tr><td>Chicken Pizza</td><td>₹350</td></tr>
+        <tr><td>Cheese Burger</td><td>₹170</td></tr>
+        <tr><td>French Fries</td><td>₹120</td></tr>
+        <tr><td>Chicken Lollipop</td><td>₹240</td></tr>
+        <tr><td>Fish Fry</td><td>₹300</td></tr>
+        <tr><td>Masala Dosa</td><td>₹100</td></tr>
+        <tr><td>Idli Vada</td><td>₹80</td></tr>
+        <tr><td>Chocolate Cake</td><td>₹140</td></tr>
+        <tr><td>Falooda</td><td>₹160</td></tr>
+        <tr><td>Cold Coffee</td><td>₹120</td></tr>
+        <tr><td>Orange Juice</td><td>₹90</td></tr>
+        <tr><td>Soft Drinks</td><td>₹50</td></tr>
+        <tr><td>Pasta</td><td>₹230</td></tr>
+        <tr><td>Tomato Soup</td><td>₹110</td></tr>
+
+    </table>
+
+    <button class="back"
+        onclick="document.getElementById('menu3').style.display='none';
+        document.getElementById('restaurant3').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+
+
+<!-- ADDRESS PAGE -->
+
+<div class="page" id="address3">
+
+    <h1>ROYAL DINE ADDRESS</h1>
+
+    <p>Restaurant Name : Royal Dine</p>
+
+    <p>Address : Whitefield, Bengaluru, Karnataka - 560066</p>
+
+    <p>Landmark : Near IT Park</p>
+
+    <p>Opening Time : 10:00 AM</p>
+
+    <p>Closing Time : 11:00 PM</p>
+
+    <p>Luxury Dining Facility Available</p>
+
+    <p>Family Hall and Party Hall Available</p>
+
+    <button class="back"
+        onclick="document.getElementById('address3').style.display='none';
+        document.getElementById('restaurant3').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+
+
+<!-- CONTACT PAGE -->
+
+<div class="page" id="contact3">
+
+    <h1>ROYAL DINE CONTACT DETAILS</h1>
+
+    <p>Phone Number : 9123456780</p>
+
+    <p>Alternative Number : 9876541230</p>
+
+    <p>Email : royaldine@gmail.com</p>
+
+    <p>Instagram : @royaldine</p>
+
+    <p>Facebook : Royal Dine Restaurant</p>
+
+    <p>Customer Care : 1800-123-456</p>
+
+    <p>WhatsApp Support : 9090909090</p>
+
+    <p>Online Food Ordering Available</p>
+
+    <button class="back"
+        onclick="document.getElementById('contact3').style.display='none';
+        document.getElementById('restaurant3').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+
+
+<!-- ABOUT US PAGE -->
+
+<div class="page" id="about3">
+
+    <h1>ABOUT ROYAL DINE</h1>
+
+    <p>Owner Name : G.DIVYATEJA</p>
+
+    <p>Project Name : Online Restaurant Management Website</p>
+
+    <p>Restaurant Type : South Indian and North Indian Restaurant</p>
+
+    <p>Location : Bengaluru, Karnataka</p>
+
+    <p>Royal Dine is famous for traditional Indian foods.</p>
+
+    <p>The restaurant provides high quality food and excellent service.</p>
+
+    <p>Online ordering and table reservation facilities are available.</p>
+
+    <p>Technology Used : HTML and CSS</p>
+
+    <p>Project Category : Web Development Project</p>
+
+    <button class="back"
+        onclick="document.getElementById('about3').style.display='none';
+        document.getElementById('restaurant3').style.display='block';">
+        Back
+    </button>
+
+</div>
+
+</body>
+
+</html>
